@@ -59,7 +59,8 @@ void inputDiet(HealthData* health_data) {
   
 	// ToCode: to provide the options for the diets to be selected
     printf("The list of diets:\n");
-    FILE*loadDIets=fopen('diets' ,"r");
+    FILE*loadDIets;
+	loadDiets = fopen('diets',"r");
     if(loadDiets==NULL){
     	printf("There is no file for diets! \n");
         return;
