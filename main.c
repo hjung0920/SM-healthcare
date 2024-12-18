@@ -32,6 +32,7 @@ int main() {
     int intakeCalories=0;
     int totalIntakeCalories=0;
     int exerciseCalories=0;
+    int totalBurnedCalories=0;
     int bmr=1300;
     int remainCalories=0;
     

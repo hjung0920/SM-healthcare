@@ -21,6 +21,10 @@
 static Exercise exercise_list[MAX_EXERCISES];
 int exercise_list_size = 0;
 
+typedef struct{
+  	char diet[100];
+  	int calories;
+  } healthdata;// determine structure
 
 /*
     description : read the information in "excercises.txt"

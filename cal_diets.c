@@ -57,8 +57,16 @@ typedef struct{
   } healthdata;// determine structure
 
 
-
-
+int getIntakeCalories(int choices[], int numChoices){
+	int totalIntakeCalories=0; //total intake calories
+	int calories[]={600,680,925,70,900,615}; //calories of each option
+	
+	for(int i=0;i<numChoices;i++){
+		int choice=choices[i];
+	} //accumulate calories for selected each diets
+	
+	return totalIntakeCalories; //return total intake calories
+}
 void inputDiet(HealthData* health_data) {
     int choice, i;
     
@@ -75,7 +83,7 @@ void inputDiet(HealthData* health_data) {
     	printf("%d. %s\n", i+1, diets[i].diet);
 	} //printf of diets option
 
-	loadDiets=fopen('diets',"r"); // file open
+	loadDiets=fopen('diets.txt',"r"); // file open
     
 	if(loadDiets==NULL){
     	printf("There is no file for diets! \n");
