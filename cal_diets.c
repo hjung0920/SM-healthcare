@@ -51,31 +51,61 @@ void loadDiets(const char* DIETFILEPATH) {
     operation : 1. provide the options for the diets to be selected
     			2. enter the selected diet and the total calories intake in the health data
 */
+typedef struct{
+  	char diet[100];
+  	int calories;
+  } healthdata;// determine structure
+
+
+
 
 void inputDiet(HealthData* health_data) {
     int choice, i;
+    
+    FILE*loadDIets; //file pointer 
+	healthdata diets[100]; //array of diets
+	int size=0; //number of read diets
+    
     
     printf("Choose (1-7):"); // to ask the option
   
 	// ToCode: to provide the options for the diets to be selected
     printf("The list of diets:\n");
-    FILE*loadDIets;
-	loadDiets = fopen('diets',"r");
-    if(loadDiets==NULL){
+    for(i=0;i<size;i++){
+    	printf("%d. %s\n", i+1, diets[i].diet);
+	} //printf of diets option
+
+	loadDiets=fopen('diets',"r"); // file open
+    
+	if(loadDiets==NULL){
     	printf("There is no file for diets! \n");
         return;
 	}// to open the file
+	
+	loadDiets(loadDiets, diets, &size); //read data from diets.txt
     
-    fclose(loadDiets); // to close the file
+  
 	// ToCode: to enter the diet to be chosen with exit option
     
 	
-    // ToCode: to enter the selected diet in the health data
-    scanf("%d", &i); //to enter the option, save the option to healthdata
+    
+    scanf("%d", &choice); //to enter the diet option 
+    
+    if(choice<1||choice>size){
+    	printf("Invalid choice!\n");
+    	fclose(loadDiets);//close the file
+    	return ;
+	} //  user misselects option
+	
+	// ToCode: to enter the selected diet in the health data
+    strcpy(health_data->diet, diet[choice -1].diet);
 
     // ToCode: to enter the total calories intake in the health data
+    int calories = getCalories(diets,size,selectedDiets);
+    totalCalories+=diets[choice -1].calories;// total calories
     
-
+  
+    fclose(loadDIets);  // to close the file
 
 }
 
