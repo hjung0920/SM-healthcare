@@ -1,10 +1,17 @@
 [Exercises] 
-walking - 220 kcal
-Total calories burned: 220 kcal 
+running - 220 kcal
+riding - 75 kcal
+swimming - 240 kcal
+pilates - 240 kcal
+walking - 40 kcal
+Total calories burned: 815 kcal 
 
 [Diets] 
-Total calories intake: 0 kcal 
+rice - 600 kcal
+pizza - 900 kcal
+tteokbokki - 615 kcal
+Total calories intake: 2115 kcal 
 
 [Total] 
 Basal metabolic rate: 1300 kcal
-The remaining calories: -1520 kcal
+The remaining calories: 0 kcal
