@@ -55,19 +55,25 @@ void loadDiets(const char* DIETFILEPATH) {
 void inputDiet(HealthData* health_data) {
     int choice, i;
     
-    
-    // ToCode: to provide the options for the diets to be selected
+    printf("Choose (1-7):"); // to ask the option
+  
+	// ToCode: to provide the options for the diets to be selected
     printf("The list of diets:\n");
+    FILE*loadDIets=fopen('diets' ,"r");
+    if(loadDiets==NULL){
+    	printf("There is no file for diets! \n");
+        return;
+	}// to open the file
     
-    
+    fclose(loadDiets); // to close the file
 	// ToCode: to enter the diet to be chosen with exit option
     
-	printf("choose again your diet:\n");
-
+	
     // ToCode: to enter the selected diet in the health data
-    
+    scanf("%d", &i); //to enter the option, save the option to healthdata
 
     // ToCode: to enter the total calories intake in the health data
+    
 
 
 }
