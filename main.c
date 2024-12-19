@@ -18,6 +18,10 @@
 #define HEALTHFILEPATH "health_data.txt"
 
 static int choice;
+int total_intakeCalories=0;
+int total_exercisesCalories=0;
+int remainCalories=0;
+int i;
 
 typedef struct{
 	int total_intakeCalories;
@@ -36,12 +40,12 @@ typedef struct{
 }diets;//definition diets structure
 
 
-void printHealthData(HealthData* health_data){
+printHealthData(HealthData* health_data){
 	printf("Health Data:\n");
 	printf("Total calories intake: %d kcal\n", health_data->total_calories_intake);
 	printf("Total calories burned: %d kcal\n", health_data->total_calories_intake);
 	printf("Basal Metabolic Rate: 1300 kal\n");
-	printf("The remaining calories: %d\n", remainCalories);
+	printf("The remaining calories: %d\n", total_intakeCalories - total_exercisesCalories-1300);
 }// health data function 
 
  
