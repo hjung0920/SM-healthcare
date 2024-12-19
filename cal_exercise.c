@@ -117,7 +117,7 @@ void inputExercise(HealthData* health_data) {
     // ToCode: to enter the selected exercise and total calcories burned in the health data
     strcpy(health_data->exercises, exercises[choice-1].exercises);
     
-    int exerciseCalories=getExercisesCalories(exercises,size,exercises);
+    
     totalExercisesCalories+=exercises[choice-1].exercises; //total exercise calories
     
     health_data->total_calories_burned=calories_burned; // to save burned calories

@@ -54,7 +54,7 @@ void loadDiets(const char* DIETFILEPATH) {
 typedef struct{
   	char diet[100];
   	int intakeCalories;
-  } healthdata;// determine structure
+  }healthdata;// determine structure
 
 
 int getIntakeCalories(int choices[], int numChoices){
@@ -68,19 +68,23 @@ int getIntakeCalories(int choices[], int numChoices){
 	
 	return totalIntakeCalories; //return total intake calories
 }
+
 void inputDiet(HealthData* health_data) {
     int choice, i;
     
-    FILE*loadDIets; //file pointer 
+    FILE*loadDiets; //file pointer 
 	healthdata diets[100]; //array of diets
-	int size=0; //number of read diets
+	if(diet_list_size==0){
+		printf("No diets loaded.\n");
+		return;}
+	 //number of read diets
     
     
     printf("Choose (1-7):"); // to ask the option
   
 	// ToCode: to provide the options for the diets to be selected
     printf("The list of diets:\n");
-    for(i=0;i<size;i++){
+    for(i=0;i<7;i++){
     	printf("%d. %s\n", i+1, diets[i].diet);
 	} //printf of diets option
 
@@ -91,30 +95,26 @@ void inputDiet(HealthData* health_data) {
         return;
 	}// to open the file
 	
-	loadDiets(loadDiets, diets, &size); //read data from diets.txt
-    
-  
+	
 	// ToCode: to enter the diet to be chosen with exit option
     
-	
     
     scanf("%d", &choice); //to enter the diet option 
     
-    if(choice<1||choice>size){
+    if(choice<1||choice>7){
     	printf("Invalid choice!\n");
     	fclose(loadDiets);//close the file
     	return ;
 	} //  user misselects option
 	
 	// ToCode: to enter the selected diet in the health data
-    strcpy(health_data->diet, diet[choice -1].diet);
+	// ToCode: to enter the total calories intake in the health data
+    strcpy(health_data->diet, diet_list[choice-1].food_name);
+    health_data->total_calories_intake=diet_list[choice-1].calories_intake; //save the selected diet calory
 
-    // ToCode: to enter the total calories intake in the health data
-    int calories = getCalories(diets,size,selectedDiets);
-    totalCalories+=diets[choice -1].calories;// total calories
     
   
-    fclose(loadDIets);  // to close the file
+    fclose(loadDiets);  // to close the file
 
 }
 
