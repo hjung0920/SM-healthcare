@@ -21,6 +21,7 @@
 static Exercise exercise_list[MAX_EXERCISES];
 int exercise_list_size = 0;
 
+
 /*
     description : read the information in "excercises.txt"
 */
@@ -33,7 +34,8 @@ void loadExercises(const char* EXERCISEFILEPATH) {
     }
 
     // ToCode: to read a list of the exercises from the given file
-    while (file==NULL) {
+    while ( ) {
+    	
         if (exercise_list_size >= MAX_EXERCISES){
         	break;
 		}
@@ -53,74 +55,22 @@ void loadExercises(const char* EXERCISEFILEPATH) {
     			3. enter the selected exercise and the total calories burned in the health data
 */
 
-typedef struct{
-	char exercises[100];
-	int exerciseCalories;
-}healthdata; //determine structure
-
-int getExerciseCalories(int choices[], int numChoices){
-	int totalExercisesCalories=0; //total consuming calories by exercising
-	int exerciseCalories[]={4,11,5,12,4,2}; //calories of each option
-	
-	int i;
-	for(i=0;i<numChoices;i++){
-		int choice=choices[i];
-	} //accumulate calories for selected each exercise
-	
-	return totalExercisesCalories; //return total consuming calories by exercising
-}
-
 void inputExercise(HealthData* health_data) {
     int choice, duration, i;
-    int totalExercisesCalories=0;
-    
-    FILE*loadExercises; //file pointer
-    healthdata exercises[100]; //array of diets
-    int size=0; // number of read exercises
-    
-    printf("Choose (1-7):"); //to ask the option
     
     // ToCode: to provide the options for the exercises to be selected
     printf("The list of exercises: \n");
-    for(i=0;i<size;i++){
-    	printf("%d. %s\n", i+1, exercises[i].exercises);
-	} //printf of exercises option
-	
-	loadExercises=fopen('exercises.txt',"r"); //file open
-	
-	
-	if(loadExercises==NULL){
-		printf("There is no file for exercises!\n");
-		return ;
-	} // to open the file
-	
-
 
 
     // ToCode: to enter the exercise to be chosen with exit option
-    
-    scanf("%d", &choice); //to enter the exercises option
-    
-    if(choice<1||choice>size){
-    	printf("Invalid choice!\n");
-    	fclose(loadExercises); //close the file
-    	return;
-	} // user misselects option
 
+ 
     
     // To enter the duration of the exercise
     printf("Enter the duration of the exercise (in min.): ");
     scanf("%d", &duration);
-    
-    int calories_burned=exercise_list[choice-1].calories_burned_per_minute*duration;
 
     // ToCode: to enter the selected exercise and total calcories burned in the health data
-    strcpy(health_data->exercises, exercises[choice-1].exercises);
     
-    
-    totalExercisesCalories+=exercises[choice-1].exercises; //total exercise calories
-    
-    health_data->total_calories_burned=calories_burned; // to save burned calories
-    fclose(loadExercises); //to close the file
 
 }
