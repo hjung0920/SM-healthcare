@@ -53,15 +53,16 @@ void loadDiets(const char* DIETFILEPATH) {
 */
 typedef struct{
   	char diet[100];
-  	int calories;
+  	int intakeCalories;
   } healthdata;// determine structure
 
 
 int getIntakeCalories(int choices[], int numChoices){
 	int totalIntakeCalories=0; //total intake calories
-	int calories[]={600,680,925,70,900,615}; //calories of each option
+	int dietCalories[]={600,680,925,70,900,615}; //calories of each option
 	
-	for(int i=0;i<numChoices;i++){
+	int i;
+	for(i=0;i<numChoices;i++){
 		int choice=choices[i];
 	} //accumulate calories for selected each diets
 	
