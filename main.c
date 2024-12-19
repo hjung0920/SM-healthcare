@@ -65,7 +65,7 @@ int main() {
     
     // Tocode: to read the list of the exercises and diets
     FILE*loadExercises=fopen("exercises.txt","r");
-    FILE*loadDiets=fopen('diets.txt',"r");
+    FILE*loadDiets=fopen("diets.txt","r");
     
     
    
@@ -133,7 +133,7 @@ int main() {
             	printf("The remaining calories: %d kcal\n", remainCalories);
             	printf("=======================================================================\n");
             	break;
-                
+                //show logged information
             case 4:
             	
     			printf("Exit the system.\n");
